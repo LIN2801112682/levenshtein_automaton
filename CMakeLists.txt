@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 20)
 include_directories(include)
 
 set(LA
-	# src/levenshtein_automaton/*.cpp
+	src/levenshtein_automaton/types.cpp
 )
 
 add_executable (test tests/test.cpp ${LA})

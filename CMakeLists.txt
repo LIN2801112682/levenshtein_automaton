@@ -8,6 +8,7 @@ include_directories(include)
 
 set(LA
 	src/levenshtein_automaton/types.cpp
+	src/levenshtein_automaton/LevenshteinAutomaton.cpp
 )
 
 add_executable (test tests/test.cpp ${LA})

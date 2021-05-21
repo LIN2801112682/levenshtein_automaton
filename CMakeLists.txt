@@ -6,9 +6,13 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories(include)
 
-set(LA
-	src/levenshtein_automaton/types.cpp
-	src/levenshtein_automaton/LevenshteinAutomaton.cpp
+set(
+		src/levenshtein_automaton/State.cpp
+		include/levenshtein_automaton/State.h
+		include/levenshtein_automaton/AugBitSet.h
+		src/levenshtein_automaton/Position.cpp
+		include/levenshtein_automaton/Position.h src/levenshtein_automaton/ParametricState.cpp include/levenshtein_automaton/ParametricState.h
 )
+
 
 add_executable (test tests/test.cpp ${LA})

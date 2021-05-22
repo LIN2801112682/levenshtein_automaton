@@ -1,6 +1,6 @@
 #pragma once
 
-#include <rpcndr.h>
+//#include <rpcndr.h>
 #include <string>
 #include <set>
 #include <fstream>

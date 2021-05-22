@@ -14,7 +14,7 @@ namespace la
         int transitionSetBeginIndex = 0;
 
     public:
-        SimpleMDAGNode(char letter, boolean isAcceptNode, int transitionSetSize);
+        SimpleMDAGNode(char letter, bool isAcceptNode, int transitionSetSize);
         char getLetter();
         bool isAcceptNode();
         int getTransitionSetBeginIndex();

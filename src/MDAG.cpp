@@ -1,5 +1,5 @@
-#include "levenshtein_automaton/MDAG.h"
-#include "levenshtein_automaton/SimpleMDAGNode.h"
+#include "../include/MDAG.h"
+#include "../include/SimpleMDAGNode.h"
 namespace la
 {
     MDAG::MDAG(char *filename)

@@ -1,5 +1,5 @@
-#include "../include/levenshtein_automaton/State.h"
-#include "../include/levenshtein_automaton/Position.h"
+#include "../include/State.h"
+#include "../include/Position.h"
 #include <unordered_set>
 #include <vector>
 #include <algorithm>

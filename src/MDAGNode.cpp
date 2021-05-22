@@ -1,5 +1,5 @@
-#include "levenshtein_automaton/SimpleMDAGNode.h"
-#include "levenshtein_automaton/MDAGNode.h"
+#include "../include/SimpleMDAGNode.h"
+#include "../include/MDAGNode.h"
 
 namespace la
 {
@@ -173,7 +173,7 @@ namespace la
         {
             int hash = 7;
             hash = 53 * hash + (this->isaccpetNode ? 1 : 0);
-            hash = 53 * hash + (this->outgoingTransitionTreeMap.size()>0 ? this->outgoingTransitionTreeMap.hashCode() : 0);
+//            hash = 53 * hash + (this->outgoingTransitionTreeMap.size()>0 ? this->outgoingTransitionTreeMap.hashCode() : 0);
             this->storedHashCode = hash;
             return hash;
         }

@@ -1,9 +1,9 @@
-#include <levenshtein_automaton/MDAGNode.h>
-#include <levenshtein_automaton/SimpleMDAGNode.h>
+#include "../include/MDAGNode.h"
+#include "../include/SimpleMDAGNode.h"
 
 namespace la
 {
-    SimpleMDAGNode::SimpleMDAGNode(char letter, boolean isAcceptNode, int transitionSetSize)
+    SimpleMDAGNode::SimpleMDAGNode(char letter, bool isAcceptNode, int transitionSetSize)
     {
         this->letter = letter;
         this->isacceptNode = isAcceptNode;

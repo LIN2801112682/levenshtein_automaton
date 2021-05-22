@@ -1,7 +1,7 @@
 #include <cstring>
-#include "../include/levenshtein_automaton/State.h"
-#include "../include/levenshtein_automaton/Position.h"
-#include "../include/levenshtein_automaton/ParametricState.h"
+#include "../include/State.h"
+#include "../include/Position.h"
+#include "../include/ParametricState.h"
 #include <string>
 #include <algorithm>
 #include <stack>

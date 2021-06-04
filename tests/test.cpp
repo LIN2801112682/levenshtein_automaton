@@ -1,41 +1,39 @@
-#include <MDAG.h>
-#include <LevenshteinAutomaton.h>
+#include "common/common.h"
+#include "levenshtein_automaton/MDAG.h"
+#include <chrono>
 #include <iostream>
-#include <cstring>
-#include "../include/State.h"
-#include "../include/Position.h"
-namespace test
+#include <list>
+
+int main()
 {
-    using LevenshteinAutomaton = la::LevenshteinAutomaton;
-    using MDAG = la::MDAG;
+    auto myArrayList{ readAllLines("../resources/wordList1.txt") };
+    auto startTime = std::chrono::high_resolution_clock::now();
+    la::MDAG myMDAG{myArrayList};
+    auto endTime = std::chrono::high_resolution_clock::now();
+    std::cout << "Build Success! Cost:" 
+        << std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count() 
+        << " ms" << std::endl;
 
-    void main(){
-        std::ifstream infile("resources/wordList.txt");
-        // 根据字典构建
-        std::string lineStr;
-        char* myArrayList;
-        if(infile){
-          while(getline(infile,lineStr)){
-               lineStr.append(lineStr);
-          }
-          strcpy(myArrayList,lineStr.c_str());
-      }
-        MDAG myMDAG = MDAG(myArrayList);
-        // 读取测试文件搜索测试
-        std::ifstream reader("resources/wordsToTest.txt");
-        std::string testString;
-        int maxEdit = 2;
-        std::vector<int> method_3_time;
+    auto reader{ readAllLines("../resources/wordToTest1.txt") };
+    int maxEdit{2};
 
-        while (getline(reader,testString))
-        {
-            std::cout << "======================================================" << std::endl;
-            std::cout << "search token: " << testString << ";maxEdit= " << maxEdit << std::endl;
-            std::list<std::string> resultList3 = LevenshteinAutomaton::iterativeFuzzySearch(maxEdit, testString, myMDAG);
-            std::cout << "Method3 iterativeFuzzySearch：" << std::endl;
-            std::cout << "matched token size: " << resultList3.size() << std::endl;
-        }
-        std::cout << "===================================" << std::endl;
-        reader.close();
+    for (const auto &testString : reader)
+    {
+        std::cout << "====" << std::endl;
+        std::cout << "search token: " << testString
+            << ";maxEdit= " << maxEdit << std::endl;
+        auto startTime = std::chrono::high_resolution_clock::now();
+        // todo
+        //std::list<std::string> resultList{LevenshteinAutomaton.iterativeFuzzySearch(maxEdit, testString, myMDAG)};
+        auto endTime = std::chrono::high_resolution_clock::now();
+        std::cout << "iterativeFuzzySearch: " << std::endl;
+        // todo
+        //std::cout << "matched token size: " << resultList.size() << std::endl;
+        //std::cout << resultList << std::endl;
+        std::cout << "cost time: "
+            << std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count()
+            << " ms" << std::endl;
     }
+    std::cout << "====" << std::endl;
+    return 0;
 }

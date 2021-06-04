@@ -1,5 +1,5 @@
-#include "../include/MDAGNode.h"
-#include "../include/SimpleMDAGNode.h"
+#include "levenshtein_automaton/MDAGNode.h"
+#include "levenshtein_automaton/SimpleMDAGNode.h"
 
 namespace la
 {
@@ -51,7 +51,7 @@ namespace la
         return targetNode;
     }
 
-    SimpleMDAGNode *SimpleMDAGNode::transition(std::vector<SimpleMDAGNode*> &mdagDataArray, std::string &str)
+    SimpleMDAGNode *SimpleMDAGNode::transition(std::vector<SimpleMDAGNode*> &mdagDataArray, const std::string &str)
     {
         SimpleMDAGNode *currentNode = this;
         int numberOfChars = str.length();
@@ -66,7 +66,7 @@ namespace la
         return currentNode;
     }
 
-    SimpleMDAGNode *SimpleMDAGNode ::traverseMDAG(std::vector<SimpleMDAGNode*> &mdagDataArray, SimpleMDAGNode *sourceNode, std::string &str)
+    SimpleMDAGNode *SimpleMDAGNode ::traverseMDAG(std::vector<SimpleMDAGNode*> &mdagDataArray, SimpleMDAGNode *sourceNode, const std::string &str)
     {
         char firstLetter = str[0];
         for(int i = 0; i < sourceNode->transitionSetSize; ++i)

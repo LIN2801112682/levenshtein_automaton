@@ -1,12 +1,12 @@
 #pragma once
 
-#include <rpcndr.h>
-#include <string>
 #include <vector>
+#include <string>
 
 namespace la
 {
-    class SimpleMDAGNode{
+    class SimpleMDAGNode
+    {
     private:
         char letter;
         bool isacceptNode;
@@ -20,8 +20,8 @@ namespace la
         int getTransitionSetBeginIndex();
         int getOutgoingTransitionSetSize();
         void setTransitionSetBeginIndex(int transitionSetBeginIndex);
-        SimpleMDAGNode *transition(std::vector<SimpleMDAGNode*> &mdagDataArray, char letter);
-        SimpleMDAGNode *transition(std::vector<SimpleMDAGNode*> &mdagDataArray, std::string &str);
-        static SimpleMDAGNode *traverseMDAG(std::vector<SimpleMDAGNode*> &mdagDataArray, SimpleMDAGNode *sourceNode, std::string &str);
+        SimpleMDAGNode *transition(std::vector<SimpleMDAGNode *> &mdagDataArray, char letter);
+        SimpleMDAGNode *transition(std::vector<SimpleMDAGNode *> &mdagDataArray, const std::string &str);
+        static SimpleMDAGNode *traverseMDAG(std::vector<SimpleMDAGNode *> &mdagDataArray, SimpleMDAGNode *sourceNode, const std::string &str);
     };
 }

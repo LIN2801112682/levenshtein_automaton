@@ -15,8 +15,8 @@ set(
 		LA
 		src/levenshtein_automaton/MDAG.cpp
 		src/levenshtein_automaton/MDAGNode.cpp
-		#src/levenshtein_automaton/SimpleMDAGNode.cpp
-		#src/State.cpp
+		src/levenshtein_automaton/SimpleMDAGNode.cpp
+		src/levenshtein_automaton/State.cpp
 		#src/Position.cpp
 		#src/ParametricState.cpp
 		#src/LevenshteinAutomaton.cpp

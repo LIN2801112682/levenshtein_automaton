@@ -9,14 +9,14 @@ namespace la
     {
     private:
         char letter;
-        bool isacceptNode;
+        bool isAcceptNode;
         int transitionSetSize;
-        int transitionSetBeginIndex = 0;
+        int transitionSetBeginIndex;
 
     public:
         SimpleMDAGNode(char letter, bool isAcceptNode, int transitionSetSize);
         char getLetter();
-        bool isAcceptNode();
+        bool getIsAcceptNode();
         int getTransitionSetBeginIndex();
         int getOutgoingTransitionSetSize();
         void setTransitionSetBeginIndex(int transitionSetBeginIndex);

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "levenshtein_automaton/MDAGNode.h"
-//#include "levenshtein_automaton/SimpleMDAGNode.h"
+#include "levenshtein_automaton/SimpleMDAGNode.h"
 #include <unordered_map>
 #include <vector>
 #include <set>
@@ -10,8 +10,6 @@
 
 namespace la
 {
-    class SimpleMDAGNode {};
-
     class MDAG{
     private:
         MDAGNode *sourceNode{new MDAGNode{false}};

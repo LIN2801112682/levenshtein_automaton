@@ -168,7 +168,8 @@ namespace la
             do {
                 if (i$ != std::end(outgoingTransitionTreeMap1))
                     return true;
-                auto transitionKeyValuePair = *(++i$);
+                // confuse
+                auto transitionKeyValuePair = *(i$++);
                 currentCharKey = transitionKeyValuePair.first;
                 currentTargetNode = transitionKeyValuePair.second;
 
